@@ -90,15 +90,13 @@ backgroundcolor = \color{light-yellow}
 \begin{centering}
     {\Large Assignment 1: Imitation Learning} \\
     \vspace{.25cm}
-    \textbf{Andrew ID:} \texttt{YOUR ID} \\
-    \textbf{Collaborators:} \texttt{YOUR COLLABORATORS}\\ 
+    \textbf{Andrew ID:} \texttt{yixuanz4} \\
 \end{centering}
 
 \vspace{.5cm}
 
 \section{Behavioral Cloning (65 pt)}
 \subsection{Part 2 (10 pt)}
-\# TODO
 \begin{table}[!h]
   \centering
   \caption{Report your result in this table.}
@@ -106,48 +104,80 @@ backgroundcolor = \color{light-yellow}
     \toprule[1.0pt]
     Metric/Env & Ant-v2 & Humanoid-v2 & Walker2d-v2 & Hopper-v2 & HalfCheetah-v2 \\
     \midrule
-    Mean  & xxx & xxx & xxx & xxx & xxx \\
-    Std.  & xxx & xxx & xxx  & xxx  & xxx \\
+    Mean  & 4713.653 & 10344.517 & 5566.846 & 3772.670 & 4205.778 \\
+    Std.  & 12.197 & 20.981 & 9.238  & 1.948  & 83.039 \\
     \bottomrule[1.0pt]
     \end{tabular}%
   \label{tab:p2}%
 \end{table}%
 
 \subsection{Part 3 (35 pt)}
-\# TODO
 \begin{table}[htbp]
   \centering
-  \caption{Fill your results in this table.}
+  \caption{eval batch size = 5000 and num agent train steps per iter = 2000, all other parameters remain default setting.}
     \begin{tabular}{ccccc}
     \toprule[1.0pt]
-    Env   & \multicolumn{2}{c}{Ant-v2} & \multicolumn{2}{c}{[Another Env]} \\
+    Env   & \multicolumn{2}{c}{Ant-v2} & \multicolumn{2}{c}{Huamnoid-v2} \\
     \midrule
     Metric & Mean  & Std.  & Mean  & Std. \\
-    Expert & xxx & xxx & xxx & xxx \\
-    BC    & xxx & xxx & xxx & xxx \\
+    Expert & 4713.653 & 12.197 & 10344.517 & 20.981 \\
+    BC    & 4232.513 & 94.071 & 288.964 & 22.206 \\
     \bottomrule[1.0pt]
     \end{tabular}%
   \label{tab:p3}%
 \end{table}%
 
 \subsection{Part 4 (20 pt)}
-\# TODO, fill in the \fref{fig:p4}, provide some analysis.
 
 \begin{figure*}[!h]
-	\centering
-\includegraphics[width=0.5\columnwidth]{figure_placeholder.pdf}
-	\caption{BC agent’s performance varies with the value of ??? parameter in ??? environment.}
-	\label{fig:p4}
+        \centering
+        \begin{minipage}[b]{0.45\textwidth}
+            \centering
+            \includegraphics[width=0.9\linewidth]{hw1/ant_avg_comp.png}
+            \caption{Average comparison}
+            \label{fig:sub1}
+        \end{minipage}
+        \hfill
+        \begin{minipage}[b]{0.45\textwidth}
+            \centering
+            \includegraphics[width=0.9\linewidth]{hw1/ant_std_comp.png}
+            \caption{Std comparison}
+            \label{fig:sub2}
+        \end{minipage}
+	\caption{BC agent’s performance varies with the value of num agent train steps per iter parameter in Ant-v2 environment. Green: values at num agent train steps per iter = 2000; Navy: values at num agent train steps per iter = 1000}
 \end{figure*}
 
 \section{DAgger (35 pt)}
 \subsection{Part 2 (35 pt)}
-\# TODO, Report the results for Ant-v2 and [Another Env] in \fref{fig:p5}:
 \begin{figure*}[!h]
-	\centering
-	\includegraphics[width=1.0\columnwidth]{figure_placeholder.pdf}
-	\caption{Learning curve, plotting the number of DAgger iterations vs. the policy’s mean return, with error bars to show the standard deviation. Please show the Ant-v2 environment results on the left and the right part demonstrates [Another Env] results.}
-	\label{fig:p5}
+        \centering
+        \begin{minipage}[b]{0.45\textwidth}
+            \centering
+            \includegraphics[width=0.9\linewidth]{hw1/avg_ant.png}
+            \caption{Average Ant-v2}
+            \label{fig:sub1}
+        \end{minipage}
+        \hfill
+        \begin{minipage}[b]{0.45\textwidth}
+            \centering
+            \includegraphics[width=0.9\linewidth]{hw1/avg_humanoid.png}
+            \caption{Average Humanoid-v2}
+            \label{fig:sub2}
+        \end{minipage}
+        \begin{minipage}[b]{0.45\textwidth}
+            \centering
+            \includegraphics[width=0.9\linewidth]{hw1/std_ant.png}
+            \caption{Std Ant-v2}
+            \label{fig:sub1}
+        \end{minipage}
+        \hfill
+        \begin{minipage}[b]{0.45\textwidth}
+            \centering
+            \includegraphics[width=0.9\linewidth]{hw1/std_humanoid.png}
+            \caption{Std Humanoid-v2}
+            \label{fig:sub2}
+        \end{minipage}
+	\caption{Learning curve, plotting the number of DAgger iterations vs. the policy’s mean return, with error bars to show the standard deviation. Please show the Ant-v2 environment results on the left and the right part demonstrates Humanoid-v2 results.}
 \end{figure*}
 
 \end{document}
